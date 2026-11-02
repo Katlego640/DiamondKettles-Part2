@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diamond Kettles | Premium Luxury Appliances</title>
+    <!-- Link External CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <!-- Navigation Header -->
+    <header>
+        <div class="container nav-container">
+            <div class="logo">Diamond Kettles</div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Hero Section -->
+        <section id="home">
+            <h1>Crafted Elegance for Your Kitchen</h1>
+            <p>Experience the ultimate combination of luxury design and rapid boiling engineering.</p>
+            <a href="#products" class="btn">Explore Collection</a>
+        </section>
+
+        <!-- Product Showcase (Grid) -->
+        <section id="products">
+            <h2>Our Featured Collection</h2>
+
+            <div class="search-container" style="margin-bottom: 20px; text-align: center;">
+    <input type="text" id="kettleSearch" placeholder="Search Diamond Kettles..." onkeyup="filterKettles()" style="padding: 10px; width: 60%; max-width: 400px; border-radius: 5px; border: 1px solid #ccc;">
+</div>
+            
+            <!-- Responsive Image Section (Requirement 3.3) -->
+            <picture>
+    <source media="(max-width: 768px)" srcset="images/kettle-mobile.jpg">
+    <source media="(max-width: 1024px)" srcset="images/kettle-tablet.png">
+    <img src="images/kettle-desktop.png" 
+         srcset="images/kettle-desktop.png 1200w, images/kettle-tablet.png 800w, images/kettle-mobile.jpg 400w"
+         sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+         alt="Diamond Kettles Signature Model" 
+         loading="lazy">
+</picture>
+
+            <div class="product-grid">
+                <article class="card">
+                    <h3>Royal Gold Edition</h3>
+                    <p>Precision temperature control with brushed gold accents.</p>
+                    <button class="btn">View Details</button>
+                </article>
+                <article class="card">
+                    <h3>Sapphire Matte Black</h3>
+                    <p>Ultra-quiet boil technology wrapped in seamless matte stainless steel.</p>
+                    <button class="btn">View Details</button>
+                </article>
+                <article class="card">
+                    <h3>Diamond Clear Glass</h3>
+                    <p>Borosilicate thermal glass with internal ambient LED indicator lighting.</p>
+                    <button class="btn">View Details</button>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="container footer-grid">
+            <div>
+                <h3>Diamond Kettles</h3>
+                <p>Redefining kitchen luxury since 2026.</p>
+            </div>
+            <div>
+                <h4>Quick Links</h4>
+                <p><a href="#home">Home</a></p>
+                <p><a href="#products">Products</a></p>
+            </div>
+            <div>
+                <h4>Support</h4>
+                <p><a href="#contact">Contact Us</a></p>
+            </div>
+        </div>
+    </footer>
+<!-- Existing content above -->
+
+<script>
+            function filterKettles() {
+                let input = document.getElementById('kettleSearch').value.toLowerCase();
+                let cards = document.querySelectorAll('.card');
+                
+                cards.forEach(card => {
+                    let title = card.querySelector('h3').textContent.toLowerCase();
+                    if (title.includes(input)) {
+                        card.style.display = "";
+                    } else {
+                        card.style.display = "none";
+                    }
+                });
+            }
+        </script>
+    </body>
+</html>

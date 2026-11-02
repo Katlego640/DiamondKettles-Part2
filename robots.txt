@@ -1,0 +1,2 @@
+User-agent: *     //This will tell the search engine crawlers that they are actually allowed to index my entire website
+Allow: /
